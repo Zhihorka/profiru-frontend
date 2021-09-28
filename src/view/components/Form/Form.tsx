@@ -1,7 +1,14 @@
 import React, { useState, useEffect } from "react";
 import style from "./style.module.css";
 
-function validateURL(URL) {
+
+interface ShrinkedUrlI {
+  full: string,
+  short: string
+}
+
+
+function validateURL(URL: string) {
   var pattern = new RegExp(
     "^(https?:\\/\\/)?" +
       "((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|" +
@@ -15,13 +22,13 @@ function validateURL(URL) {
 }
 
 const Form = () => {
-  const [urlList, setUrlList] = useState();
+  const [urlList, setUrlList] = useState<ShrinkedUrlI[]>([{full: "", short:""}]);
   const [displayList, setDisplayList] = useState(false);
   const [fullURL, setFullURL] = useState("");
   const [customURL, setCustomURL] = useState("");
   const [customUrlMode, setCustomUrlMode] = useState(false);
-  const onChangeFullURL = (event) => setFullURL(event.target.value);
-  const onChangeCustomURL = (event) => setCustomURL(event.target.value);
+  const onChangeFullURL = (event: { target: { value: React.SetStateAction<string>; }; }) => setFullURL(event.target.value);
+  const onChangeCustomURL = (event: { target: { value: React.SetStateAction<string>; }; }) => setCustomURL(event.target.value);
   const onChangeShrinkMode = () => {
     setCustomUrlMode(!customUrlMode);
   };
@@ -34,7 +41,7 @@ const Form = () => {
     } catch (error) {}
   };
 
-  const shrinkURL = async (fullUrl, shorUrl) => {
+  const shrinkURL = async (fullUrl: string, shorUrl: string) => {
     try {
       if (validateURL(fullUrl)) {
         if (customUrlMode) {
@@ -55,9 +62,9 @@ const Form = () => {
             body: JSON.stringify(body),
           });
         }
-        setDisplayList = true;
-        fullURL = "";
-        customURL = "";
+        setDisplayList(true);
+        setFullURL("");
+        setCustomURL("");
         window.location.href = "/";
       } else {
         alert("Проверьте правильность введеных данных !");
