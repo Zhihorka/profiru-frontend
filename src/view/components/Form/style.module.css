@@ -1,0 +1,145 @@
+@import url(../../global/variables.css);
+
+.wrapper {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--primary-red);
+}
+
+.form {
+  grid-area: Form;
+  padding: 20px;
+  width: auto;
+  width: auto;
+  background-color: var(--primary-white);
+  border-radius: 5px;
+  overflow-x: auto;
+  overflow-y: auto;
+}
+
+.bottom {
+  display: block;
+  font-size: 20px;
+  padding-bottom: 10px;
+  color: var(--text-gray);
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+}
+.buttonComponent {
+  margin: 10px;
+  padding: 15px;
+  font-size: 18px;
+  background-color: var(--primary-red);
+  color: var(--primary-white);
+  border-radius: 5px;
+  border: 2px solid var(--primary-red);
+  font-weight: 700;
+}
+
+.buttonComponent_disabled {
+  margin: 10px;
+  padding: 15px;
+  font-size: 18px;
+  background-color: var(--primary-gray);
+  color: var(--text-gray);
+  border-radius: 5px;
+  border: 2px solid var(--primary-gray);
+  font-weight: 700;
+}
+.input {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.label {
+  text-align: center;
+  padding: 20px;
+}
+.padding_small {
+  padding: 5px;
+}
+
+.inputComponent {
+  color: var(--text-gray);
+  padding: 5px;
+  background-color: var(--primary-gray);
+  font-size: 18px;
+  border: 2px solid var(--primary-gray);
+  border-radius: 5px;
+}
+
+.logo {
+  margin: 10px 10px 10px 0;
+  display: flex;
+  justify-content: center;
+}
+.image {
+  width: 60px;
+  height: 60px;
+}
+
+.top {
+  font-size: 20px;
+  padding-bottom: 10px;
+  display: block;
+  color: var(--text-gray);
+}
+
+.inputLabel_checkbox {
+  display: inline;
+}
+
+.checkbox {
+  display: inline;
+}
+
+.icon {
+  display: inline;
+  font-size: 40px;
+}
+
+.title {
+  display: inline;
+  font-size: 30px;
+  color: var(--primary-red);
+}
+
+.absolute {
+  position: absolute;
+  top: 20px;
+}
+
+.button_viewMode {
+  margin: 10px;
+  padding: 15px;
+  font-size: 18px;
+  background-color: var(--primary-white);
+  color: var(--text-gray);
+  border-radius: 5px;
+  border: 2px solid var(--primary-white);
+  font-weight: 700;
+}
+
+.fullURL {
+  background-color: var(--primary-gray);
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.shortURL {
+  background-color: var(--primary-gray);
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.table {
+  padding: 30px;
+  overflow-x: scroll;
+}
